@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Review</title>
+        <style>
+            .container{
+                padding: 0px;
+                margin: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height : 100vh;
+                width : 100%;
+                background-color: #f6f6f6;
+            }
+            .login{
+                display: flex;
+                flex-direction: column;
+                align-items:center;
+                justify-content: center;
+                background-color: #73d0ff;
+                border-radius: 15px;
+                height : 500px;
+                width : 500px;
+            }
+            .login_button{
+                display: flex;
+                justify-content: center;
+            }
+            .button {
+              background-color: #428bff;
+              border: None;
+              border-radius: 6px;
+              color: white;
+              padding: 10px 50px;
+              font-size: 14px;
+              margin: 20px;
+            }
+
+            .button:hover{
+                background-color: #1c7eff;
+            }
+
+            .logo{
+                /* background-color: red; */
+                display: flex;
+                flex : 1;
+                align-items:center;
+            }
+
+            .content{
+                /* background-color: yellow; */
+                flex : 1.2;
+            }
+
+            input{
+                font-size:20px; margin: 4px;
+                border-radius: 5px;
+                border: None;
+                padding: 5px 10px;
+                color:#323840;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="login">
+                <div class="logo">
+                    <!-- <p>Book Review Login</p> -->
+                    <img src="https://i.ibb.co/ZfHwpQj/BookRev.png" alt="BookRev" border="0">
+                </div>
+                <!-- <div class="text">
+                    <p>Use your BookRev Account</p>
+                </div> -->
+                <div class="content">
+                    <form action="{{url_for('login_submit')}}" method="post">
+                        <input type="text" name="username" placeholder="Username" size="30"><br><br>
+                        <input type="password" name="password" placeholder="Password" size="30" ><br><br>
+
+                        <div class="login_button">
+                            <button type="submit" name="submit" class="button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

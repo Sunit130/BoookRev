@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        {{isbn}}<br>
+        {{title}}<br>
+        {{author}}<br>
+        {{year}}<br>
+        {{avg}}<br>
+        {{cnt}}<br>
+        {{user_name}}<br>
+        {{rating}}<br>
+
+        {{review}}
+        <table>
+            <h3>fill : </h3>
+            {% for e in fill %}
+            <tr>
+                {% for i in e%}
+                <td>{{i}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

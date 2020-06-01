@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Review</title>
+        <style>
+            .container{
+                padding: 0px;
+                margin: 0px;
+                width: 100%;
+                height: 100%;
+                background-color: #f6f6f6;
+            }
+            .title_bar{
+                display : flex;
+                width: 100%;
+                background-color: #73d0ff;
+            }
+            .logo{
+                padding: 10px;
+                display : flex;
+                flex : 1;
+                /* background-color: green; */
+            }
+            .lr{
+                display : flex;
+                flex: 1;
+                /* background-color: yellow; */
+                padding: 10px;
+                margin: 10px;
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+            .search_bar{
+                display:flex;
+                padding: 10px;
+                justify-content: flex-end;
+                background-color: #f6f6f6;
+            }
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #428bff;
+                border: None;
+                border-radius: 6px;
+                color: white;
+                padding: 5px 10px;
+                margin-left: 5px;
+                /* font-size: 14px; */
+              /* margin: 20px; */
+            }
+            .button:hover{
+                background-color: #1c7eff;
+            }
+
+            input{
+                /* font-size:20px; margin: 4px; */
+                border-radius: 5px;
+                /* border: None; */
+                padding: 2px 5px;
+                color:#323840;
+            }
+
+            .table_lr li{
+                display:inline-block;
+                text-decoration: none;
+            }
+            .book{
+                display : flex;
+            }
+            .left{
+                flex : 1;
+                /* background-color: red; */
+            }
+            .middle{
+                flex : 3;
+                padding : 10px;
+                /* background-color: blue; */
+            }
+            .right{
+                flex : 1;
+                /* background-color: yellow; */
+            }
+
+            .book_info{
+                display: flex;
+                background-color: #e4e8f0;
+                border: 1px solid black;
+            }
+            .book_img{
+                display: flex;
+                flex : 1;
+                padding: 20px;
+                align-items: center;
+                justify-content: center;
+                /* background-color: blue; */
+            }
+            .book_details{
+                padding: 20px;
+                display: flex;
+                flex : 2;
+                align-items: center;
+                /* justify-content: center; */
+                /* background-color: yellow; */
+            }
+            /* table tr td{
+                border : 1px solid black;
+            } */
+            .table_book_details tr td{
+                padding: 5px;
+            }
+            @media screen and (max-width: 800px) {
+                .left, .right{
+                    flex : 0;
+                    /* background-color: red; */
+                }
+                .middle{
+                    flex : 1;
+                    /* background-color: yellow; */
+                }
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title_bar">
+                <div class="logo">
+                    <img src="https://i.ibb.co/ZfHwpQj/BookRev.png" alt="BookRev" border="0">
+                </div>
+                <div class="lr">
+                        {% if login %}
+                        <ul class="table_lr">
+                            <li style="font-family:Candara; font-size:18px;">{{ username }}</li>
+                            <li>
+                                <form action="{{url_for('logout')}}" method="get">
+                                    <button class="button" type="submit" name="logout">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+
+                        {% else %}
+                        <ul class="table_lr">
+                            <li>
+                                <form action="{{url_for('login')}}" method="get">
+                                    <button class="button" type="submit" name="login">Login</button>
+                                </form>
+                            </li>
+                            <li>
+                                <form  action="{{url_for('register')}}" method="get">
+                                    <button class="button" type="submit" name="register">Register</button>
+                                </form>
+                            </li>
+                        </ul>
+
+                        {% endif %}
+                </div>
+            </div>
+            <div class="search_bar">
+                <form action="{{url_for('search')}}" method="post">
+                    <input type="text" name="search_bar">
+                    <button type="submit" name="search">Search</button>
+                </form>
+            </div>
+            <hr>
+        <!-- {{img}} -->
+        <div class="book">
+            <div class="left"></div>
+            <div class="middle">
+                <div class="book_info">
+                    <div class="book_img">
+                        <img src="{{img}}">
+                    </div>
+                    <div class="book_details">
+                        <table class="table_book_details">
+                            <tr>
+                                <td><b>Title</b></td>
+                                <td><b>:</b></td>
+                                <td>{{book[0][1]}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Author</b></td>
+                                <td><b>:</b></td>
+                                <td>{{book[0][2]}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Year</b></td>
+                                <td><b>:</b></td>
+                                <td>{{book[0][3]}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Isbn</b></td>
+                                <td><b>:</b></td>
+                                <td>{{book[0][0]}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <h3>Discription : </h3>
+                <p>{{disc}}</p>
+
+                <table>
+                    <tr>
+                        <td><h3>Goodreads</h3></td>
+                    </tr>
+                    <tr>
+                        <td>Average Rating</td>
+                        <td>:</td>
+                        <td>{{avg}}</td>
+                    </tr>
+                    <tr>
+                        <td>Number of ratings the work</td>
+                        <td>:</td>
+                        <td>{{cnt}}</td>
+                    </tr>
+                </table>
+                <br>
+
+                <h3>Reviews :</h3>
+                {% for e in reviews %}
+                    <p>{{e[1]}} <br>
+                    {% for i in range(e[2]) %}
+                        &#9733;
+                    {% endfor %}
+                     <br> {{e[3]}} <br></p>
+                {% endfor %}
+
+                {% if login %}
+                    {% if allowed %}
+                        <br>
+                        <h3>Write Your review</h3>
+                        <form action="{{ url_for('reviews', isbn = isb)}}" method="post">
+                            <label for="rating">Rating : </label>
+                            <select id="rating" name="rating">
+                                <option value="5">5</option>
+                                <option value="4">4</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                            <br>
+                            <textarea name="review" rows="8" cols="80" placeholder="Write your review here..."></textarea>
+                            <br>
+                            <button type="submit" name="submit">Submit</button>
+                        </form>
+                    {% endif %}
+
+                {% else %}
+                    <h4>Login to leave review</h4>
+                {% endif %}
+            </div>
+            <div class="right"></div>
+        </div>
+
+
+        </div>
+    </body>
+</html>

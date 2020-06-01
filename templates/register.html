@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Review</title>
+        <style>
+
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height :100vh;
+                width : 100%;
+                background-color: #f6f6f6;
+            }
+            .container0{
+                flex-direction: column;
+                padding:20px;
+
+                justify-content: center;
+                border-radius: 15px;
+                background-color: #73d0ff;
+            }
+            .container1{
+                display: flex;
+                /* padding:20px; */
+                justify-content: center;
+            }
+            .container2{
+                display: flex;
+                flex-wrap:wrap;
+                /* padding:20px; */
+                justify-content: center;
+                /* border-radius: 15px; */
+            }
+            .register{
+                font-family: Candara;
+                color:#104557;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                /* background-color: red; */
+                flex:1;
+            }
+            .condition{
+                font-family: Candara;
+                color:#104557;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* justify-content: center; */
+                /* background-color: blue; */
+                flex:1;
+            }
+            .register_button{
+                display: flex;
+                justify-content: center
+            }
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #428bff;
+                border: None;
+                border-radius: 6px;
+                color: white;
+                padding: 10px 50px;
+                font-size: 14px;
+              /* margin: 20px; */
+            }
+
+            .button:hover{
+                background-color: #1c7eff;
+            }
+            p{
+                font-size: 25px;
+            }
+            li{
+                font-size: 18px;
+            }
+            input{
+                font-size:20px; margin: 4px;
+                border-radius: 5px;
+                border: None;
+                padding: 5px 10px;
+                color:#323840;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container0">
+                <div class="container1">
+                    <img src="https://i.ibb.co/ZfHwpQj/BookRev.png" alt="BookRev" border="0">
+                </div>
+                <div class="container2">
+                    <div class="register">
+                        <p>Create BookRev Account</p>
+                        <form action="{{ url_for('register')}}" method="post">
+                            <input type="text" name="first_name" placeholder="First Name"><br><br>
+                            <input type="text" name="last_name" placeholder="Last Name"><br><br>
+                            <input type="text" name="username" placeholder="Username"><br><br>
+                            <input type="password" name="password" placeholder="Password"><br><br>
+                            <input type="password" name="cpassword" placeholder="Confirm Password"><br><br>
+                            <div class="register_button">
+                                <button type="submit" name="submit" class="button">Register</button>
+                            </div>
+
+                        </form>
+                        <br>
+                    </div>
+                    <div class="condition">
+                        <p>Conditions</p>
+                        <ul>
+                            <li>First name cannot be empty</li>
+                            <li>Last name cannot be empty</li>
+                            <li>Username cannot be empty</li>
+                            <li>Password cannot be empty</li>
+                            <ul>
+                                <li>The password must be 7 to 32 characters long.</li>
+                                <li>The password is case-sensitive.</li>
+                                <li>Single quotes, double quotes ( ‘  " ), and spaces are not allowed.</li>
+                                <li>Do not post or share your password or send your password to others.</li>
+                            </ul>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

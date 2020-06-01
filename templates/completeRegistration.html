@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Review</title>
+        <style>
+            h1{
+                text-align:center
+            }
+            h3{
+                text-align:center
+            }
+        </style>
+    </head>
+    <body>
+
+        {% if fname == "" %}
+            <h1>First name cannot be empty</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if lname == "" %}
+            <h1>Last name cannot be empty</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if username == "" %}
+            <h1>Username cannot be empty</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if password == "" %}
+            <h1>Password cannot be empty</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if password != cpassword %}
+            <h1>Password didn't matched</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if alreadyOccupied %}
+            <h1>This username is already occupied</h1>
+            <a href="{{url_for('index')}}"><h3>Register<h3></a>
+        {% else %}
+        {% if push %}
+            <h1>You have been successfully registered</h1>
+            <a href="{{url_for('login')}}"><h3>login</h3></a>
+        {% else %}
+        <p>Password Condition Fail</p>
+        <ul>
+            <li>The password must be 7 to 32 characters long.</li>
+            <li>The password is case-sensitive.</li>
+            <li>Single quotes, double quotes, ampersands ( ‘  " ), and spaces are not allowed.</li>
+            <li>Do not post or share your password or send your password to others by email.</li>
+        </ul>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endif %}
+
+
+    </body>
+</html>
