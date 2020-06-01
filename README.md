@@ -21,7 +21,7 @@ In the Terminal,
 ![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/register.jpg)
 
 ### Login
-![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/login.jpg)
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/login%20(1).jpg)
 
 ### Search
 ![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/search.jpg)
@@ -30,4 +30,4 @@ In the Terminal,
 ![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/image%20(2).jpg)
 
 ### API
-![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/api.png)
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/api(1).png)
