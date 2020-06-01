@@ -13,3 +13,21 @@ In the Terminal,
 3. `export FLASK_APP=app.py`
 
 4. `flask run`
+
+### Home
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/home%20(1).jpg)
+
+### Register
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/register.jpg)
+
+### Login
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/login.jpg)
+
+### Search
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/search.jpg)
+
+### Book
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/image%20(2).jpg)
+
+### API
+![alt text](https://github.com/Sunit130/BoookRev/blob/master/demo/api.png)
